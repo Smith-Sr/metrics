@@ -1,4 +1,4 @@
-name: GitHub Metrics
+name: GitHub Metrics 3D
 on:
   schedule: [{cron: "0 0 * * *"}]
   workflow_dispatch:
@@ -15,20 +15,20 @@ jobs:
           token: ${{ secrets.METRICS_TOKEN }}
           user: Smith-Sr
           template: classic
-          base: header, activity, community, repositories
+          base: header, activity, community, repositories, metadata
           config_timezone: America/Lima
+          
+          # 🎨 Tema oscuro elegante
           config_theme: dark
           config_display: large
           config_animations: yes
-          
-          # 🎨 Diseño moderno con efecto glassmorphism
           config_padding: 8%, 10%
           
-          # 📊 Actividad y contribuciones
+          # 📊 Calendario 3D isométrico (lo más importante)
           plugin_isocalendar: yes
-          plugin_isocalendar_duration: half-year
+          plugin_isocalendar_duration: full-year
           
-          # 💻 Lenguajes de programación
+          # 💻 Lenguajes principales
           plugin_languages: yes
           plugin_languages_sections: most-used
           plugin_languages_colors: github
@@ -36,29 +36,41 @@ jobs:
           plugin_languages_threshold: 2%
           plugin_languages_indepth: yes
           plugin_languages_details: percentage
-          plugin_languages_ignored: html, css, scss
+          plugin_languages_ignored: html, css, scss, makefile
           
-          # 🏆 Logros destacados
-          plugin_achievements: yes
-          plugin_achievements_display: compact
-          plugin_achievements_threshold: B
-          plugin_achievements_limit: 8
+          # 📈 Gráfico de contribuciones 3D
+          plugin_calendar: yes
+          plugin_calendar_limit: 0
           
-          # ⭐ Repositorios destacados
-          plugin_stars: yes
-          plugin_stars_limit: 3
-          
-          # 📈 Estadísticas de commits
+          # 🔥 Estadísticas de racha
           plugin_habits: yes
           plugin_habits_from: 200
           plugin_habits_days: 14
           plugin_habits_charts: yes
           plugin_habits_trim: yes
+          plugin_habits_facts: yes
+          plugin_habits_languages_limit: 8
           
-          # 🎯 Líneas de código
+          # ⭐ Repositorios destacados
+          plugin_stars: yes
+          plugin_stars_limit: 4
+          
+          # 🏆 Logros
+          plugin_achievements: yes
+          plugin_achievements_display: compact
+          plugin_achievements_threshold: C
+          plugin_achievements_limit: 6
+          
+          # 📝 Actividad reciente
+          plugin_activity: yes
+          plugin_activity_limit: 5
+          plugin_activity_days: 14
+          plugin_activity_filter: all
+          
+          # 📊 Líneas de código
           plugin_lines: yes
-          plugin_lines_sections: base, repositories
+          plugin_lines_sections: base
           
-          # 🔥 Racha de contribuciones
+          # 🎯 Seguimiento
           plugin_followup: yes
-          plugin_followup_sections: repositories, user
+          plugin_followup_sections: repositories
