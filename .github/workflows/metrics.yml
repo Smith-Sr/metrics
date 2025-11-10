@@ -1,0 +1,65 @@
+name: GitHub Metrics
+
+on:
+  # Se ejecuta automáticamente todos los días a las 06:00 AM
+  schedule:
+    - cron: "0 6 * * *"
+  # También se ejecuta cuando haces un push al main
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+jobs:
+  github-metrics:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Generate modern GitHub metrics
+        uses: lowlighter/metrics@latest
+        with:
+          # 💾 Token obligatorio (da acceso a tus datos públicos)
+          token: ${{ secrets.METRICS_TOKEN }}
+
+          # 🧠 Tu nombre de usuario de GitHub
+          user: Smith-Sr
+
+          # 📦 Archivo de salida
+          filename: github-metrics.svg
+
+          # 🎨 Tema moderno y limpio
+          template: classic
+          base: header, activity, community, repositories, metadata
+          config_timezone: America/Lima
+
+          # 🌈 Modo “glassmorphism” (transparente y animado)
+          plugin_habits: yes
+          plugin_habits_from: 200
+          plugin_habits_days: 14
+          plugin_habits_facts: yes
+          plugin_habits_charts: yes
+
+          # 📊 Actividad de commits y contribuciones
+          plugin_activity: yes
+          plugin_activity_limit: 5
+          plugin_activity_load: 300
+          plugin_activity_visibility: public
+
+          # 🧭 Lenguajes más usados
+          plugin_languages: yes
+          plugin_languages_ignored: html, css
+          plugin_languages_details: percentage
+          plugin_languages_limit: 6
+
+          # 🧠 Perfil y seguidores
+          plugin_followup: yes
+          plugin_followup_sections: user
+
+          # ⚡ Racha de commits y estadísticas rápidas
+          plugin_streak: yes
+          plugin_streak_days: 30
+          plugin_streak_sections: current, longest
+
+          # 🎇 Fondo animado (tarjeta moderna)
+          config_display: large
+          config_padding: 12%
+          config_twemoji: yes
+          config_order: base.header, base.repositories, base.activity, habits, streak, languages, followup
