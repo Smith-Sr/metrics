@@ -1,11 +1,8 @@
-name: Metrics
+name: 🚀 Elite GitHub Metrics
 on:
-  # Ejecutar automáticamente cada día a las 00:00 UTC
-  schedule: [{cron: "0 0 * * *"}]
-  # Permitir ejecución manual
+  schedule: [{cron: "0 */6 * * *"}]  # Cada 6 horas
   workflow_dispatch:
-  # Ejecutar cuando se haga push
-  push: {branches: ["master", "main"]}
+  push: {branches: ["main", "master"]}
 
 jobs:
   github-metrics:
@@ -16,73 +13,122 @@ jobs:
       - uses: lowlighter/metrics@latest
         with:
           token: ${{ secrets.METRICS_TOKEN }}
-          
-          # Opciones generales
           user: Smith-Sr
           template: classic
           base: header, activity, community, repositories, metadata
           config_timezone: America/Lima
-          
-          # 🎨 Plugins activados
-          
-          # Líneas de código agregadas/eliminadas
-          plugin_lines: yes
-          plugin_lines_history_limit: 1
-          plugin_lines_repositories_limit: 4
-          plugin_lines_sections: base
-          
-          # Lenguajes más usados
-          plugin_languages: yes
-          plugin_languages_analysis_timeout: 15
-          plugin_languages_analysis_timeout_repositories: 7.5
-          plugin_languages_categories: markup, programming
-          plugin_languages_colors: github
-          plugin_languages_limit: 8
-          plugin_languages_recent_categories: markup, programming
-          plugin_languages_recent_days: 14
-          plugin_languages_recent_load: 300
-          plugin_languages_sections: most-used
-          plugin_languages_threshold: 0%
-          
-          # Actividad reciente
+
+          # 🎨 DISEÑO BRUTAL
+          config_theme: dark
+          config_display: medium
+          config_animations: yes
+          config_padding: 10%, 12%
+          config_output: github-metrics.svg
+
+          # 🔥 CALENDARIO 3D ÉPICO
+          plugin_isocalendar: yes
+          plugin_isocalendar_year: 2025
+
+          # 💎 ACTIVIDAD DETALLADA
           plugin_activity: yes
-          plugin_activity_days: 14
+          plugin_activity_limit: 8
+          plugin_activity_days: 30
           plugin_activity_filter: all
-          plugin_activity_limit: 5
-          plugin_activity_load: 300
           plugin_activity_visibility: all
-          
-          # Commits notables
+          plugin_activity_timestamps: yes
+
+          # 🧠 LENGUAJES DOMINADOS
+          plugin_languages: yes
+          plugin_languages_sections: most-used, recently-used
+          plugin_languages_colors: rainbow
+          plugin_languages_limit: 12
+          plugin_languages_threshold: 1%
+          plugin_languages_indepth: yes
+          plugin_languages_details: percentage, bytes-size
+          plugin_languages_analysis_timeout: 60
+          plugin_languages_categories: programming
+          plugin_languages_recent_categories: programming
+          plugin_languages_recent_load: 500
+          plugin_languages_recent_days: 30
+
+          # 🏆 LOGROS DESBLOQUEADOS
+          plugin_achievements: yes
+          plugin_achievements_display: detailed
+          plugin_achievements_threshold: C
+          plugin_achievements_secrets: yes
+          plugin_achievements_limit: 10
+
+          # 📊 ESTADÍSTICAS BRUTALES
+          plugin_habits: yes
+          plugin_habits_from: 500
+          plugin_habits_days: 30
+          plugin_habits_facts: yes
+          plugin_habits_charts: yes
+          plugin_habits_charts_type: classic
+          plugin_habits_trim: yes
+          plugin_habits_languages_limit: 10
+          plugin_habits_languages_threshold: 2%
+
+          # ⭐ REPOS LEGENDARIOS
           plugin_notable: yes
           plugin_notable_from: organization
           plugin_notable_types: commit
-          
-          # Repositorios destacados
+          plugin_notable_repositories: yes
+
+          # 🎯 RACHA INFINITA
+          plugin_followup: yes
+          plugin_followup_sections: repositories, user
+          plugin_followup_indepth: yes
+
+          # 💪 LÍNEAS DE CÓDIGO MASIVAS
+          plugin_lines: yes
+          plugin_lines_history_limit: 2
+          plugin_lines_repositories_limit: 8
+          plugin_lines_sections: base, repositories, history
+
+          # 🌟 STARS GANADAS
+          plugin_stars: yes
+          plugin_stars_limit: 6
+
+          # 🎨 CONTRIBUCIONES VISUALES
+          plugin_calendar: yes
+          plugin_calendar_limit: 0
+
+          # 🔥 STACK TECNOLÓGICO
+          plugin_topics: yes
+          plugin_topics_mode: icons
+          plugin_topics_sort: stars
+          plugin_topics_limit: 20
+
+          # 💼 ACTIVIDAD EN REPOS
           plugin_repositories: yes
           plugin_repositories_order: featured, pinned, starred, random
-          
-          # Calendario de contribuciones (isométrico)
-          plugin_isocalendar: yes
-          plugin_isocalendar_duration: half-year
-          
-          # Hábitos de código
-          plugin_habits: yes
-          plugin_habits_charts_type: classic
-          plugin_habits_days: 14
-          plugin_habits_facts: yes
-          plugin_habits_from: 200
-          
-          # Stars en el tiempo
-          plugin_starlists: yes
-          plugin_starlists_limit: 2
-          plugin_starlists_limit_repositories: 2
-          plugin_starlists_shuffle_repositories: yes
-          
-          # Tráfico del repositorio
+          plugin_repositories_forks: yes
+          plugin_repositories_affiliations: owner, collaborator, organization_member
+
+          # 🎖️ GISTS COMPARTIDOS
+          plugin_gists: yes
+
+          # 📈 TRÁFICO Y VISTAS
           plugin_traffic: yes
-          
-          # Seguidores
+
+          # 🌍 CONTRIBUCIONES A LA COMUNIDAD
           plugin_people: yes
-          plugin_people_limit: 24
+          plugin_people_limit: 28
           plugin_people_size: 28
           plugin_people_types: followers, following
+          plugin_people_identicons: yes
+          plugin_people_shuffle: yes
+
+          # ⚡ REACCIONES Y ENGAGEMENT
+          plugin_reactions: yes
+          plugin_reactions_limit: 200
+          plugin_reactions_days: 30
+          plugin_reactions_display: absolute
+
+          # 🎭 CÓDIGO DESTACADO
+          plugin_code: yes
+          plugin_code_days: 7
+          plugin_code_lines: 24
+          plugin_code_load: 500
+          plugin_code_visibility: public
