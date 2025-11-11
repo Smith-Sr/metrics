@@ -64,3 +64,8 @@ jobs:
           
           # 📝 GISTS
           plugin_gists: yes
+          
+          # 📈 LÍNEAS DE CÓDIGO (gráfico pequeño)
+          plugin_lines: yes
+          plugin_lines_sections: base
+          plugin_lines_repositories_limit: 4
