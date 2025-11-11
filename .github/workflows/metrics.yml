@@ -17,18 +17,18 @@ jobs:
           template: classic
           base: header, activity, community, repositories, metadata
           config_timezone: America/Lima
-
+          
           # 🎨 DISEÑO BRUTAL
           config_theme: dark
-          config_display: medium
+          config_display: large
           config_animations: yes
           config_padding: 10%, 12%
           config_output: github-metrics.svg
-
+          
           # 🔥 CALENDARIO 3D ÉPICO
           plugin_isocalendar: yes
-          plugin_isocalendar_year: 2025
-
+          plugin_isocalendar_duration: full-year
+          
           # 💎 ACTIVIDAD DETALLADA
           plugin_activity: yes
           plugin_activity_limit: 8
@@ -36,7 +36,7 @@ jobs:
           plugin_activity_filter: all
           plugin_activity_visibility: all
           plugin_activity_timestamps: yes
-
+          
           # 🧠 LENGUAJES DOMINADOS
           plugin_languages: yes
           plugin_languages_sections: most-used, recently-used
@@ -50,14 +50,14 @@ jobs:
           plugin_languages_recent_categories: programming
           plugin_languages_recent_load: 500
           plugin_languages_recent_days: 30
-
+          
           # 🏆 LOGROS DESBLOQUEADOS
           plugin_achievements: yes
           plugin_achievements_display: detailed
           plugin_achievements_threshold: C
           plugin_achievements_secrets: yes
           plugin_achievements_limit: 10
-
+          
           # 📊 ESTADÍSTICAS BRUTALES
           plugin_habits: yes
           plugin_habits_from: 500
@@ -68,50 +68,50 @@ jobs:
           plugin_habits_trim: yes
           plugin_habits_languages_limit: 10
           plugin_habits_languages_threshold: 2%
-
+          
           # ⭐ REPOS LEGENDARIOS
           plugin_notable: yes
           plugin_notable_from: organization
           plugin_notable_types: commit
           plugin_notable_repositories: yes
-
+          
           # 🎯 RACHA INFINITA
           plugin_followup: yes
           plugin_followup_sections: repositories, user
           plugin_followup_indepth: yes
-
+          
           # 💪 LÍNEAS DE CÓDIGO MASIVAS
           plugin_lines: yes
           plugin_lines_history_limit: 2
           plugin_lines_repositories_limit: 8
           plugin_lines_sections: base, repositories, history
-
+          
           # 🌟 STARS GANADAS
           plugin_stars: yes
           plugin_stars_limit: 6
-
+          
           # 🎨 CONTRIBUCIONES VISUALES
           plugin_calendar: yes
           plugin_calendar_limit: 0
-
+          
           # 🔥 STACK TECNOLÓGICO
           plugin_topics: yes
           plugin_topics_mode: icons
           plugin_topics_sort: stars
           plugin_topics_limit: 20
-
+          
           # 💼 ACTIVIDAD EN REPOS
           plugin_repositories: yes
           plugin_repositories_order: featured, pinned, starred, random
           plugin_repositories_forks: yes
           plugin_repositories_affiliations: owner, collaborator, organization_member
-
+          
           # 🎖️ GISTS COMPARTIDOS
           plugin_gists: yes
-
+          
           # 📈 TRÁFICO Y VISTAS
           plugin_traffic: yes
-
+          
           # 🌍 CONTRIBUCIONES A LA COMUNIDAD
           plugin_people: yes
           plugin_people_limit: 28
@@ -119,13 +119,13 @@ jobs:
           plugin_people_types: followers, following
           plugin_people_identicons: yes
           plugin_people_shuffle: yes
-
+          
           # ⚡ REACCIONES Y ENGAGEMENT
           plugin_reactions: yes
           plugin_reactions_limit: 200
           plugin_reactions_days: 30
           plugin_reactions_display: absolute
-
+          
           # 🎭 CÓDIGO DESTACADO
           plugin_code: yes
           plugin_code_days: 7
