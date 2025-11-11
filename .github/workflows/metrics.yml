@@ -15,7 +15,7 @@ jobs:
           token: ${{ secrets.METRICS_TOKEN }}
           user: Smith-Sr
           template: classic
-          base: ""
+          base: header, activity, community, repositories, metadata
           config_timezone: America/Lima
           
           # 🎨 DISEÑO BRUTAL
@@ -39,7 +39,7 @@ jobs:
           
           # 🧠 LENGUAJES DOMINADOS
           plugin_languages: yes
-          plugin_languages_sections: most-used
+          plugin_languages_sections: most-used, recently-used
           plugin_languages_colors: rainbow
           plugin_languages_limit: 12
           plugin_languages_threshold: 1%
@@ -90,9 +90,8 @@ jobs:
           plugin_stars: yes
           plugin_stars_limit: 6
           
-          # 🎨 CONTRIBUCIONES VISUALES
-          plugin_calendar: yes
-          plugin_calendar_limit: 0
+          # 🎨 CONTRIBUCIONES VISUALES (DESACTIVADO)
+          plugin_calendar: no
           
           # 🔥 STACK TECNOLÓGICO
           plugin_topics: yes
