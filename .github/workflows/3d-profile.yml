@@ -1,28 +1,16 @@
-name: 🌀 Generar gráfico 3D de contribuciones
+name: 🪩 3D GitHub Profile
+
 on:
-  schedule: [{ cron: "0 0 * * *" }]  # Se ejecuta cada día a medianoche
+  schedule: [{cron: "0 0 * * *"}]  # Cada 24 horas
   workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: 🧹 Clonar el repositorio
-        uses: actions/checkout@v4
-
-      - name: 🌈 Generar gráfico 3D
+      - name: Generate 3D profile
         uses: yoshi389111/github-profile-3d-contrib@0.7.1
         with:
-          USERNAME: Smith-Sr           # Tu usuario de GitHub
-          THEME: night-rainbow         # Puedes cambiar: dark, green, blue, red, etc.
-          ANIMATION: true              # Genera versión animada
-          OUTPUT_PATH: profile-3d-contrib
-          OUTPUT_FILE: smith-3d.svg    # Nombre del archivo de salida
-
-      - name: 🚀 Subir archivo generado
-        run: |
-          git config user.name "github-actions"
-          git config user.email "github-actions@github.com"
-          git add .
-          git commit -m "🧊 Actualización automática del perfil 3D"
-          git push
+          token: ${{ secrets.METRICS_TOKEN }}
+          user: Smith-Sr
+          config: config.yml
