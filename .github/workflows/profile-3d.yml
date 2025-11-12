@@ -1,0 +1,30 @@
+name: 🌀 Generate 3D GitHub Profile
+
+on:
+  schedule:
+    - cron: "0 */12 * * *" # Cada 12 horas
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: Generate 3D Profile Contribution Graph
+    steps:
+      - name: 🧩 Checkout repository
+        uses: actions/checkout@v3
+
+      - name: 🪄 Generate 3D graph
+        uses: yoshi389111/github-profile-3d-contrib@0.7.1
+        env:
+          GITHUB_TOKEN: ${{ secrets.METRICS_TOKEN }}
+          USERNAME: Smith-Sr
+          THEME: night-rainbow
+          ANIMATION: true
+
+      - name: 🚀 Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Update 3D contribution graph [skip ci]" || echo "No changes"
+          git push
