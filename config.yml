@@ -1,4 +1,0 @@
-# Configuración del gráfico 3D animado
-user: Smith-Sr
-theme: "night-rainbow"   # Cambia a "season-animate", "spring" o "winter" si quieres otro estilo
-svg_filename: "profile-night-rainbow.svg"
