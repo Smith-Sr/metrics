@@ -90,11 +90,14 @@ jobs:
           plugin_stars: yes
           plugin_stars_limit: 6
           
-          # 🎨 CONTRIBUCIONES VISUALES (DESACTIVADO)
-          plugin_calendar: no
+          # 🎨 CONTRIBUCIONES VISUALES
+          plugin_calendar: yes
+          plugin_calendar_limit: 0
           
           # 🔥 STACK TECNOLÓGICO
           plugin_topics: yes
           plugin_topics_mode: icons
           plugin_topics_sort: stars
           plugin_topics_limit: 20
+
+
